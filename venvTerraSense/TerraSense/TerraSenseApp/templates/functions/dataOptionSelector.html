@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<container>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Datos</title>
+    <style>
+        /* Estilos para centrar los botones horizontalmente */
+        .container {
+            text-align: center;
+            margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+        }
+
+        /* Estilos para los botones */
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+
+        /* Estilos para el div de datos */
+        #datosMostrados {
+            display: none; /* Inicialmente oculto */
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+
+        }
+    </style>
+    <script>
+        function mostrarDatos() {
+            var datosMostrados = document.getElementById('datosMostrados')
+
+            // Realizar una petición al servidor para obtener los datos
+            fetch("{% url 'obtener_ultimo_dato' %}")
+                .then((response) => response.json())
+                .then((data) => {
+                    // Mostrar el div
+                    datosMostrados.style.display = 'block'
+
+                    // Etiquetar el porcentaje de humedad
+                    let etiqueta = ''
+                    if (data.prc_humedad > 75) {
+                        etiqueta = 'Porcentaje de humedad: Alto'
+                    } else if (data.prc_humedad >= 35 && data.prc_humedad <= 75) {
+                        etiqueta = 'Porcentaje de humedad: Óptimo'
+                    } else {
+                        etiqueta = 'Porcentaje de humedad: Bajo'
+                    }
+
+                    // Actualizar el div con los datos obtenidos y la etiqueta de porcentaje de humedad
+                    datosMostrados.innerHTML = `<p>${etiqueta}</p><p>Porcentaje de humedad: ${data.prc_humedad}%</p><p>Fecha de obtención: ${data.fecha_obtencion}</p><p>Humedad ambiente: ${data.humedad_ambiente}</p><p>Temperatura ambiente: ${data.temperatura_ambiente}°C</p>`
+                })
+                .catch((error) => console.error('Error:', error))
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Botón "X" para mostrar los datos -->
+        <button class="btn" onclick="mostrarDatos()">Mostrar ultimo dato</button>
+        <button class="btn">Registro de datos anteriores</button>
+        <!-- Div para mostrar los datos -->
+        <div id="datosMostrados"></div>
+    </div>
+</body>
+
+</html>
+</container>

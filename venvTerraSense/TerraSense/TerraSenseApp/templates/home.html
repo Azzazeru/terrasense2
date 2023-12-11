@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <body>
+    <link rel="stylesheet" href="Style.css" />
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(58, 228, 52);">
+      <a class="navbar-brand" href="#">TerraSense</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="configuration">Configurations</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkFunctions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Functions</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkFunctions" style="background-color: rgb(127, 243, 123);">
+              <a class="dropdown-item" href="#">Sensor</a>
+              <a class="dropdown-item" href="dataOptionSelector">Data</a>
+              <a class="dropdown-item" href="#">Documents</a>
+              <a class="dropdown-item" href="#">Storage</a>
+              <a class="dropdown-item" href="#">X</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="1000">
+          <img src="{% static 'img/xd2.png' %}" class="d-block w-100" height="700" />
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="{% static 'img/xd5.png' %}" class="d-block w-100" height="700" />
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'img/xd4.png' %}" class="d-block w-100" height="700" />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-body-tertiary text-muted footer">
+    <div>
+      <a href="" class="me-4 text-reset"><i class="fab fa-facebook-f"></i></a>
+      <a href="" class="me-4 text-reset"><i class="fab fa-twitter"></i></a>
+      <a href="" class="me-4 text-reset"><i class="fab fa-google"></i></a>
+      <a href="" class="me-4 text-reset"><i class="fab fa-instagram"></i></a>
+      <a href="" class="me-4 text-reset"><i class="fab fa-linkedin"></i></a>
+      <a href="" class="me-4 text-reset"><i class="fab fa-github"></i></a>
+    </div>
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4"><i class="fas fa-gem me-3"></i>TerraSense</h6>
+            <p>Nuestra solucion a su problema de producion con nuestros sensores de ultima tecnologia faciles de instalar que se desempeñaran de manera eficiente y rapida.</p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Productos</h6>
+            <p>
+              <a href="#!" class="text-reset">Sensores TerraSense</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Paneles solares</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Fuentes de Energia</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Para Usuarios</h6>
+            <p>
+              <a href="#!" class="text-reset">Precio</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Configuraciones</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Ordenes</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Ayuda</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contactenos</h6>
+            <p>
+              <i class="fas fa-home me-3"></i>Freire 862, 8071189 San Bernardo, Región Metropolitana
+            </p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              ik.justo@duocuc.cl
+            </p>
+            <p>
+              <i class="fas fa-phone me-3"></i> + 56932986146
+            </p>
+            <p>
+              <i class="fas fa-print me-3"></i> + 56971093357
+            </p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+      <style>
+        .footer {
+          background-color: #f2f2f2;
+          text-align: center;
+        }
+        .footer-logo {
+          width: 100px;
+        }
+        .footer-links a {
+          color: #666;
+          text-decoration: none;
+          margin: 0 10px;
+        }
+      </style>
+    </section>
+    <div class="text-center p-4" style="background-color: rgb(58, 228, 52);;">
+      © 2023 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</html>

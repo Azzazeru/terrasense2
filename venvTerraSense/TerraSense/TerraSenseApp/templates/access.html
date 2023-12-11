@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+	/* Estilos para centrar el formulario */
+	body,
+	img{
+	background-image: url(../static/img/tierra.jpg);
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+	}
+	html {
+		height: 100%;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: Arial, sans-serif;
+    	background: transparent;
+	}
+
+	.login-container {
+		width: 300px;
+		padding: 20px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		background: rgba(255,255,255,0.2);
+    	border: 2px solid transparent;
+    	border-image: linear-gradient(to right, #00c9ff, #00c9ff) 1;
+
+  }
+	
+
+	.login-form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.input-group {
+		margin-bottom: 15px;
+	}
+
+	input[type="text"],
+	input[type="password"] {
+		padding: 8px;
+		width: 100%;
+		border-radius: 3px;
+		border: 1px solid #ccc;
+	}
+
+	button {
+		padding: 10px;
+		border: none;
+		border-radius: 3px;
+		background-color: #007bff;
+		color: white;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: #0056b3;
+	}
+	
+	
+
+</style>
+
+<body>
+	<div class="login-container">
+		<form id="loginForm" class="login-form blanco" >
+			<h2>Login</h2>
+			<div class="input-group">
+				<label for="username">Username</label>
+				<input type="text" id="username" name="username" required>
+			</div>
+			<div class="input-group">
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" required>
+			</div>
+			<button type="submit">Login</button>
+		</form>
+	</div>
+
+</body>
+
+<script>
+
+	document.getElementById('loginForm').addEventListener('submit', function (event) {
+		event.preventDefault();
+
+		const username = document.getElementById('username').value;
+		const password = document.getElementById('password').value;
+
+		if (username === 'admin' && password === 'admin') {
+			// Si las credenciales son correctas, redirige a otra página
+			window.location.href = 'home';
+		} else {
+			alert('Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.');
+		}
+	});
+
+
+</script>
+
+</html>
